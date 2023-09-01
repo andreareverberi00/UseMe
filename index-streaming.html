@@ -3,9 +3,16 @@
   <head>
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <script defer src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+    <script defer src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script defer src="hls.js"></script>
+    <script defer src="dash.js"></script>
     <meta charset="UTF-8" />
     <title>Video Player Streaming Page</title>
     <style>
+      h1 {
+        color: white;
+      }
       .box {
         display: flex;
         justify-content: center;
@@ -22,8 +29,31 @@
   </head>
 
   <body style="background-color: black">
+    <h1>VIDEO TAG HLS</h1>
     <div class="box">
-      <h1>VIDEO.JS WITH M3U8 (HSL) SOURCES VOD STREAMING</h1>
+      <h2>VIDEO TAG WITH M3U8 (HLS) SOURCES VOD STREAMING</h2>
+      <video id="video-hls-vod" width="400" height="300" controls></video>
+    </div>
+    <div class="box">
+      <h2>VIDEO TAG WITH M3U8 (HLS) SOURCES LIVE STREAMING</h2>
+      <video id="video-hls-live" width="400" height="300" controls></video>
+    </div>
+    <hr />
+
+    <h1>VIDEO TAG DASH</h1>
+    <div class="box">
+      <h2>VIDEO TAG WITH MPD (DASH) SOURCES VOD STREAMING</h2>
+      <video id="video-dash-vod" width="400" height="300" controls></video>
+    </div>
+    <div class="box">
+      <h2>VIDEO TAG WITH MPD (DASH) SOURCES LIVE STREAMING</h2>
+      <video id="video-dash-live" width="400" height="300" controls></video>
+    </div>
+    <hr />
+
+    <h1>VIDEO.JS HLS</h1>
+    <div class="box">
+      <h2>VIDEO.JS WITH M3U8 (HLS) SOURCES VOD STREAMING</h2>
       <video
         id="hls-example"
         class="video-js vjs-default-skin"
@@ -39,9 +69,8 @@
       </video>
     </div>
     <div class="box">
-      <h1>VIDEO.JS WITH M3U8 (HSL) SOURCES LIVE STREAMING</h1>
+      <h2>VIDEO.JS WITH M3U8 (HLS) SOURCES LIVE STREAMING</h2>
       <video
-        id="hls-example"
         class="video-js vjs-default-skin"
         width="400"
         height="300"
@@ -54,10 +83,11 @@
         />
       </video>
     </div>
+
+    <h1>VIDEO.JS DASH</h1>
     <div class="box">
-      <h1>VIDEO.JS WITH MPD (DASH) SOURCES VOD STREAMING</h1>
+      <h2>VIDEO.JS WITH MPD (DASH) SOURCES VOD STREAMING</h2>
       <video
-        id="hls-example"
         class="video-js vjs-default-skin"
         width="400"
         height="300"
@@ -71,9 +101,8 @@
       </video>
     </div>
     <div class="box">
-      <h1>VIDEO.JS WITH MPD (DASH) SOURCES LIVE STREAMING</h1>
+      <h2>VIDEO.JS WITH MPD (DASH) SOURCES LIVE STREAMING</h2>
       <video
-        id="hls-example"
         class="video-js vjs-default-skin"
         width="400"
         height="300"
