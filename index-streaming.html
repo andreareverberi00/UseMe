@@ -1,30 +1,58 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <link href="https://vjs.zencdn.net/8.5.2/video-js.css" rel="stylesheet" />
     <script defer src="https://vjs.zencdn.net/8.5.2/video.min.js"></script>
     <meta charset="UTF-8" />
-    <title>Video Player Page</title>
-</head>
+    <title>Video Player Streaming Page</title>
+    <style>
+      .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: #ee82ee;
+        width: 100%;
+        height: 100%;
+        padding: 10px 0;
+        margin: 20px 0;
+        outline: 4px dashed #82ee82;
+      }
+    </style>
+  </head>
 
-<body style="background-color: black;">
-    <div
-        style="display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: violet; width: 100%; height: 100%; ">
-        <h1>VIDEO JS WITH M3U8 SOURCES STREAMING</h1>
-        <video id='hls-example' class="video-js vjs-default-skin" width="400" height="300" controls data-setup="{}">
-            <source type="application/x-mpegURL"
-                src="https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8">
-        </video>
+  <body style="background-color: black">
+    <div class="box">
+      <h1>VIDEO.JS WITH M3U8 (HSL) SOURCES LIVE STREAMING</h1>
+      <video
+        id="hls-example"
+        class="video-js vjs-default-skin"
+        width="400"
+        height="300"
+        controls
+        data-setup="{}"
+      >
+        <source
+          type="application/x-mpegURL"
+          src="https://cph-p2p-msl.akamaized.net/hls/live/2000341/test/master.m3u8"
+        />
+      </video>
     </div>
-    <div
-        style="display: flex; justify-content: center; align-items: center; flex-direction: column; background-color: violet; width: 100%; height: 100%; ">
-        <h1>VIDEO JS WITH MP4 SOURCES STREAMING </h1>
-        <video id='hls-example' class="video-js vjs-default-skin" width="400" height="300" controls data-setup="{}">
-            <source type="video/mp4" src="https://live-par-1-abr-cdn.livepush.io/live/bigbuckbunnyclip/index.mpd">
-            <!-- NOT WORKING -->
-        </video>
+    <div class="box">
+      <h1>VIDEO.JS WITH MPD (DASH) SOURCES LIVE STREAMING</h1>
+      <video
+        id="hls-example"
+        class="video-js vjs-default-skin"
+        width="400"
+        height="300"
+        controls
+        data-setup="{}"
+      >
+        <source
+          type="application/dash+xml"
+          src="https://livesim.dashif.org/livesim/chunkdur_1/ato_7/testpic4_8s/Manifest.mpd"
+        />
+      </video>
     </div>
-</body>
-
+  </body>
 </html>
